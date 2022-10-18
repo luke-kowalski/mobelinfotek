@@ -19,7 +19,7 @@ def ms_sql_conn():
         return conn
     except pyodbc.Error as e:
         sqlstate = e.args[1]
-        print(sqlstate)
+        print(f"ERROR: {sqlstate}")
         raise
 
 
@@ -32,7 +32,7 @@ def ms_sql_delete_orders(name):
 
     except pyodbc.Error as e:
         sqlstate = e.args[1]
-        print(sqlstate)
+        print(f"ERROR: {sqlstate}")
         raise
 
     finally:
@@ -48,7 +48,7 @@ def ms_sql_insert_data_to_database(BUILDING, BUILDING_FLOOR, BUILDING_UNIT, IMOS
 
     except pyodbc.Error as e:
         sqlstate = e.args[1]
-        print(sqlstate)
+        print(f"ERROR: {sqlstate}")
         raise
 
     finally:
